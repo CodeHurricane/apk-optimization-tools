@@ -55,7 +55,7 @@
 <!--         <keypass value="别名密码"/> -->
 <!--         alias -->
 <!--         <alias value="别名"/> -->
-        <path value="C:\Users\luoding\workspace_test\dn_android_resproguard\mykeystore.keystore"/>
+        <path value=""/>
         <!--storepass-->
         <storepass value="123456"/>
         <!--keypass-->

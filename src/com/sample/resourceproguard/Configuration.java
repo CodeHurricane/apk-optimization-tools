@@ -207,7 +207,7 @@ public class Configuration {
 			}
 		}
 	}
-	//��ȡǩ���ļ�
+
 	private void readSign(Node node) throws IOException {
 		NodeList childNodes = node.getChildNodes();
 
@@ -248,7 +248,6 @@ public class Configuration {
 			}
 		}
 	}
-//����ǩ���ļ����������
 	public void setSignData(File SigntureFile, String keypass, String storealias, String storepass, boolean signApk)
 			throws IOException {
 		this.mUseSignAPk = signApk;

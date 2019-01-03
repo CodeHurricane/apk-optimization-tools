@@ -41,7 +41,7 @@ public class ApkDecoder
   {
     this.mClient = m;
   }
-//�ж�ӳ���ļ��Ƿ����
+
   public boolean hasResources()
     throws AndrolibException
   {
@@ -73,23 +73,22 @@ public class ApkDecoder
     //��ѹapk����ļ���tempĿ¼
     this.mCompressData = FileOperation.unZipAPk(this.mApkFile.getAbsoluteFile().getAbsolutePath(), unZipDest);
     dealWithCompressConfig();
-    //������ɺ���Դ�ļ����Ŀ¼
     this.mOutResFile = new File(this.mOutDir.getAbsolutePath() + File.separator + "r");
-    //raw�ļ����������Ŀ¼
+
     this.mRawResFile = new File(this.mOutDir.getAbsoluteFile().getAbsolutePath() + File.separator + "temp" + File.separator + "res");
     this.mOutTempDir = new File(this.mOutDir.getAbsoluteFile().getAbsolutePath() + File.separator + "temp");
 
     if ((!(this.mRawResFile.exists())) || (!(this.mRawResFile.isDirectory()))) {
       throw new IOException("can not found res dir in the apk or it is not a dir");
     }
-    //��ʱӳ���ļ�
+
     this.mOutTempARSCFile = new File(this.mOutDir.getAbsoluteFile().getAbsolutePath() + File.separator + "resources_temp.arsc");
-    //ӳ���ļ�
+
     this.mOutARSCFile = new File(this.mOutDir.getAbsoluteFile().getAbsolutePath() + File.separator + "resources.arsc");
-    //apk�ļ���
+
     String basename = this.mApkFile.getName().substring(0, this.mApkFile.getName().indexOf(".apk"));
-    //��Դ�ļ�ӳ����
-    this.mResMappingFile = 
+
+    this.mResMappingFile =
       new File(this.mOutDir.getAbsoluteFile().getAbsolutePath() + File.separator + 
       "resource_mapping_" + basename + ".txt");
   }
@@ -158,11 +157,11 @@ public class ApkDecoder
       ensureFilePath();
 
       System.out.printf("decoding resources.arsc\n", new Object[0]);
-      //��ȡresources.arsc
+
       RawARSCDecoder.decode(this.mApkFile.getDirectory().getFileInput("resources.arsc"));
       
       ResPackage[] pkgs = ARSCDecoder.decode(this.mApkFile.getDirectory().getFileInput("resources.arsc"), this);
-     //д������
+
       ARSCDecoder.write(this.mApkFile.getDirectory().getFileInput("resources.arsc"), this, pkgs);
     }
   }

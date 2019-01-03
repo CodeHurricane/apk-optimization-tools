@@ -9,7 +9,6 @@ import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
-//zip�ļ�ר�÷�װ�࣬����zip�ļ�������ļ�·��
 public class ZipRODirectory extends AbstractDirectory
 {
   private ZipFile mZipFile;
